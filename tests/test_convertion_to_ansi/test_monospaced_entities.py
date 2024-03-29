@@ -36,7 +36,7 @@ class TestTextProcessing(unittest.TestCase):
 
     def test_multiple_monospaced_tags(self):
         text = "Some `monospaced` text with `very monospaced` and `monospaced` characters."
-        expected_result = "Some \x1b[7mmonos paced\x1b[27m text with \x1b[7mvery monospaced\x1b[27m and \x1b[7mmonospaced\x1b[27m characters."
+        expected_result = "Some \x1b[7mmonospaced\x1b[27m text with \x1b[7mvery monospaced\x1b[27m and \x1b[7mmonospaced\x1b[27m characters."
         self.assertEqual(process_text(text, "ansi"), expected_result)
 
     def test_different_styles(self):
