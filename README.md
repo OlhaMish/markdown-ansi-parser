@@ -43,6 +43,12 @@ options:
                         choices: ['ansi', 'html']
 ```
 
+### Run tests
+
+To run tests you need to [install poetry](https://python-poetry.org/docs/), then run tests by: 
+```bash
+  poetry run pytest
+```
 
 ### Example
 
