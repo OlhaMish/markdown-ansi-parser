@@ -39,6 +39,9 @@ options:
   -h, --help            show this help message and exit
   --output OUTPUT, -o OUTPUT
                         Path to the output HTML file
+  -format, -f
+                        choices: ['ansi', 'html']
+  
 ```
 
 
@@ -54,7 +57,7 @@ As she navigates through this `strange land`, she encounters a series of nonsens
 ```The book is renowned for its playful use of language, logic, and its **exploration** of the boundaries of reality.```
 ```
 
-### Parse it:
+### Parse it as html:
 
 ```bash
 poetry run python markdown2hml.py input.md -o output.html 
@@ -69,6 +72,15 @@ output.html:
 As she navigates through this <tt>strange land</tt>, she encounters a series of nonsensical events, including a tea party with a <i>Mad Hatter</i>, a pool of tears, and a trial over stolen tarts.</p>
 <p><pre>The book is renowned for its playful use of language, logic, and its **exploration** of the boundaries of reality.</pre></p>
 ```
+
+### Parse it as ansi:
+
+```bash
+poetry run python markdown2hml.py -o output.html -f ansi input.md 
+```
+output.ansi:
+
+![image](https://github.com/OlhaMish/software-development-lab-2/blob/master/docs/img.png)
 
 ### Revert commit
 [link](https://github.com/OlhaMish/software-development-lab-1/commit/ea82720f5675d9c93b87cf83f3bde17e197f277d)
