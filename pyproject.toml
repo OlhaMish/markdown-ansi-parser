@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "markdown_to_html"
+version = "0.1.0"
+description = ""
+authors = ["olhamish <olgami1402@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^8.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
