@@ -41,7 +41,6 @@ options:
                         Path to the output HTML file
   -format, -f
                         choices: ['ansi', 'html']
-  
 ```
 
 
@@ -84,3 +83,9 @@ output.ansi:
 
 ### Revert commit
 [link](https://github.com/OlhaMish/software-development-lab-1/commit/ea82720f5675d9c93b87cf83f3bde17e197f277d)
+
+### Dropped tests
+[link](https://github.com/OlhaMish/software-development-lab-2/commit/1f76ec9fb14190358e18b2bf2dd16688b0f6b862)
+
+### Conclusions
+From my experience, writing unit tests before coding might not seem appealing, but doing so can save considerable time.
