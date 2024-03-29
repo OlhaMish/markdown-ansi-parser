@@ -1,7 +1,6 @@
-import re
-from markdown_to_html.patterns import BOLD_PATTERN, ITALIC_PATTERN, CODE_PATTERN, OPENING_STARS_PATTERN, \
+from markdown_to_ansi.patterns import BOLD_PATTERN, ITALIC_PATTERN, CODE_PATTERN, OPENING_STARS_PATTERN, \
     CLOSED_STARS_PATTERN, OPENING_UNDERSCORE_PATTERN, CLOSED_UNDERSCORE_PATTERN, OPENING_BACKTICK_PATTERN, \
-    CLOSED_BACKTICK_PATTERN
+    CLOSED_BACKTICK_PATTERN, EMPTY_PARAGRAPH_PATTERN
 
 
 def check_nested_tags_for_each_style(nested_style_matches, pattern_1, pattern_2):
@@ -23,9 +22,9 @@ def nested_tags_check(text):
     check_nested_tags_for_each_style(nested_code_matches, ITALIC_PATTERN, BOLD_PATTERN)
 
 
-def check_opened_tags(text):
+def check_opened_tags(text, preformatted_tag):
     for sentence in text:
-        if sentence[3:8] == "<pre>":
+        if sentence[:len(preformatted_tag)] == preformatted_tag:
             continue
         matches = OPENING_STARS_PATTERN.findall(sentence)
         matches += CLOSED_STARS_PATTERN.findall(sentence)
@@ -40,7 +39,9 @@ def check_opened_tags(text):
 def remove_empty_paragraphs(paragraphs):
     final_html_text = []
     for paragraph in paragraphs:
-        if paragraph == "<p></p>":
-            continue
-        final_html_text += [paragraph]
+        # Перевірка, чи відповідає поточний параграф порожньому параграфу
+        if not EMPTY_PARAGRAPH_PATTERN.match(paragraph):
+            final_html_text.append(paragraph)
+
     return final_html_text
+
