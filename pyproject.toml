@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "markdown_to_html"
+name = "markdown_convertor"
 version = "0.1.0"
 description = ""
 authors = ["olhamish <olgami1402@gmail.com>"]
