@@ -44,7 +44,7 @@ class TestTextProcessing(unittest.TestCase):
         self.assertEqual(process_text(text, "ansi"), expected_result)
 
     def test_different_styles(self):
-        text = "**Bold** text with _italic_ and `monospaced`."
+        text = "**Bold ** text with _italic_ and `monospaced`."
         expected_result = "\x1b[1mBold\x1b[22m text with \x1b[3mitalic\x1b[23m and \x1b[7mmonospaced\x1b[27m."
         self.assertEqual(process_text(text, "ansi"), expected_result)
 
