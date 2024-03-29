@@ -18,17 +18,17 @@ Clone this repo:
 ### Run application:
 
 ```bash
-poetry run python markdown2hml.py <path/to/your/input/file> 
+poetry run python markdown2html.py <path/to/your/input/file> 
 ```
 
 Explore commands:
 
 ```bash
-poetry run python markdown2hml.py --help
+poetry run python markdown2html.py --help
 ```
 
 ```bash
-usage: markdown2hml.py [-h] [--output OUTPUT] input_file
+usage: markdown2html.py [-h] [--output OUTPUT] input_file
 
 Convert Markdown to HTML.
 
@@ -65,7 +65,7 @@ As she navigates through this `strange land`, she encounters a series of nonsens
 ### Parse it as html:
 
 ```bash
-poetry run python markdown2hml.py input.md -o output.html 
+poetry run python markdown2html.py input.md -o output.html 
 ```
 
 
@@ -81,7 +81,7 @@ As she navigates through this <tt>strange land</tt>, she encounters a series of 
 ### Parse it as ansi:
 
 ```bash
-poetry run python markdown2hml.py -o output.html -f ansi input.md 
+poetry run python markdown2html.py -o output.html -f ansi input.md 
 ```
 output.ansi:
 
